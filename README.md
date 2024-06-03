@@ -14,9 +14,9 @@
 
 ## Εξοπλισμός που αγοράστηκε και κόστος
 - [Raspberry Pi 4 Model B 4GB Low budget Kit](https://www.hellasdigital.gr/go-create/raspberry-and-accessories/raspberry-pi-4-and-accessories/raspberry-pi-4-model-b-4gb-low-budget-kit-pi4lb4gb/) - €103,39
-  ![Raspberry Pi 4 Model B Low budget Kit](https://www.hellasdigital.gr/images/detailed/28/RaspberryPi_4_Model_B_Low_budget_Kit_small.jpg)
+  ![Raspberry Pi 4 Model B Low budget Kit](https://www.hellasdigital.gr/images/detailed/28/RaspberryPi_4_Model_B_Low_budget_Kit.jpg)
 - [Raspberry Pi Camera Module V3](https://www.hellasdigital.gr/go-create/raspberry-and-accessories/accessories/raspberry-pi-camera-module-v3/) - €36,70
-  ![Raspberry Pi Camera Module V3](https://www.hellasdigital.gr/images/detailed/32/Standard_Hero__1673252414_444_small.jpg)
+  ![Raspberry Pi Camera Module V3](https://www.hellasdigital.gr/images/detailed/32/Standard_Hero__1673252414_444.jpg)
 
 ## Συνολικό κόστος: €140,09
 
