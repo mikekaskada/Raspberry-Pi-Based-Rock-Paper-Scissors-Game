@@ -19,4 +19,5 @@
 ### Εξοπλισμός που αγοράστηκε και κόστος
 - Raspberry Pi 4 Model B 4GB Low budget Kit €103,39
 - Raspberry Pi Camera Module V3 €36,70
+
 Συνολικό κόστος €140,09 
