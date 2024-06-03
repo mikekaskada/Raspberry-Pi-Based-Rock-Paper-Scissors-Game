@@ -15,7 +15,7 @@
 - [Raspberry Pi Camera Module V3](https://www.hellasdigital.gr/go-create/raspberry-and-accessories/accessories/raspberry-pi-camera-module-v3/) - €36,70
   ![Raspberry Pi Camera Module V3](https://www.hellasdigital.gr/images/detailed/32/Standard_Hero__1673252414_444.jpg)
 
-Συνολικό κόστος: €140,09
+## Συνολικό κόστος: €140,09
 
 ### Σημείωση:
 Στην πορεία του πρότζεκτ διαπιστώθηκε ότι χρειαζόμασταν μεγαλύτερο καλώδιο για την κάμερα μήκους 1 m το οποίο αγοράστηκε ξεχωριστά.
