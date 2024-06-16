@@ -8,21 +8,33 @@
 Μετά από πολλές δυσκολίες και προβλήματα με την εγκατάσταση των απαραίτητων βιβλιοθηκών της Python για την τεχνητή νοημοσύνη, είτε μέσω της εντολής `apt install`, είτε μέσω εικονικού περιβάλλοντος Python (`pip install`) για την βιβλιοθήκη Picamera2, καταλήξαμε στο λειτουργικό **Raspberry Pi 4 Bullseye DNN image**:  _A Raspberry Pi 4 Bullseye 64-OS image with deep learning examples_ από την ομάδα [Q-engineering](https://github.com/Qengineering/RPi-Bullseye-DNN-image).
 Λεπτομέρειες για το λειτουργικό σύστημα και τον εξολπισμό υπάρχουν στο αρχείο [Εξοπλισμός.pdf](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/%CE%95%CE%BE%CE%BF%CF%80%CE%BB%CE%B9%CF%83%CE%BC%CF%8C%CF%82.pdf).
 
-### Picamera2
+**Picamera2**
 
-Το Picamera2 είναι η βιβλιοθήκη βασισμένη στη libcamera που αντικαθιστά το Picamera, το οποίο ήταν ένα πρόγραμμα διεπαφής Python για την αρχαία στοίβα κάμερας του Raspberry Pi. Το Picamera2 παρέχει επίσης ένα εύκολο στη χρήση API σε Python.
+Η [Picamera2](https://github.com/raspberrypi/picamera2) είναι η βιβλιοθήκη βασισμένη στη libcamera που αντικαθιστά την Picamera, η οποία ήταν μια διεπαφή Python για την παλαιότερη στοίβα κάμερας του Raspberry Pi και δεν υποστήριζει τη νέα κάμερα [Raspberry Pi Camera Module V3](https://datasheets.raspberrypi.com/camera/camera-module-3-product-brief.pdf), η οποία διαθέτει δυνατότητα autofocus.
 
-Μπορείτε να βρείτε την τεκμηρίωση [εδώ](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/%CE%95%CE%BE%CE%BF%CF%80%CE%BB%CE%B9%CF%83%CE%BC%CF%8C%CF%82.pdf), η οποία θα σας βοηθήσει να ξεκινήσετε.
+Μπορείτε να βρείτε την τεκμηρίωση [εδώ](https://example.com), η οποία θα σας βοηθήσει να ξεκινήσετε.
 
+**Εγκατάσταση**
 
-#### Εγκατάσταση
+Η Picamera2 υποστηρίζεται μόνο στις εικόνες Raspberry Pi OS Bullseye (ή νεότερες), τόσο σε 32 όσο και σε 64-bit. Από τον Σεπτέμβριο του 2022, το Picamera2 είναι προεγκατεστημένο στις εικόνες που κατεβάζονται από το Raspberry Pi. Λειτουργεί σε όλες τις πλακέτες Raspberry Pi, μέχρι και το Pi Zero, αν και η απόδοση σε κάποιους τομείς μπορεί να είναι χειρότερη σε λιγότερο ισχυρές συσκευές.
 
-Το Picamera2 υποστηρίζεται μόνο στις εικόνες Raspberry Pi OS Bullseye (ή νεότερες), τόσο 32 όσο και 64-bit. Από τον Σεπτέμβριο του 2022, το Picamera2 είναι προεγκατεστημένο στις εικόνες που κατεβάζονται από το Raspberry Pi. Λειτουργεί σε όλες τις πλακέτες Raspberry Pi, μέχρι και το Pi Zero, αν και η απόδοση σε κάποιους τομείς μπορεί να είναι χειρότερη σε λιγότερο ισχυρές συσκευές.
+Η Picamera2 δεν υποστηρίζεται σε:
 
-Το Picamera2 δεν υποστηρίζεται σε:
 - Εικόνες βασισμένες σε Buster ή παλαιότερες εκδόσεις.
 - Εικόνες Raspberry Pi OS Legacy.
 - Εικόνες Bullseye (ή νεότερες) όπου η παλαιά στοίβα κάμερας έχει ενεργοποιηθεί ξανά.
 
-Στις εικόνες Raspberry Pi OS, το Picamera2 είναι πλέον εγκατεστημένο με όλες τις εξαρτήσεις γραφικού περιβάλλοντος (Qt και OpenGL). Στην Raspberry Pi OS Lite, είναι εγκατεστημένο χωρίς τις εξαρτήσεις γραφικού περιβάλλοντος, αν και οι προεπισκοπήσεις εικόνας μπορούν ακόμα να εμφανιστούν χρησιμοποιώντας DRM/KMS. Αν αυτοί οι χρήστες επιθυμούν να χρησιμοποιήσουν τα επιπλέον χαρακτηριστικά GUI X-Windows, θα πρέπει να εκτελέσουν:
+**Εγκατάσταση με χρήση του apt**
+
+Το apt είναι ο συνιστώμενος τρόπος εγκατάστασης και ενημέρωσης του Picamera2.
+
+Αν η Picamera2 είναι ήδη εγκατεστημένη, μπορείτε να την ενημερώσετε με την εντολή `sudo apt install -y python3-picamera2`, ή ως μέρος μιας πλήρους ενημέρωσης του συστήματος (για παράδειγμα, `sudo apt upgrade`).
+
+Αν η Picamera2 δεν είναι ήδη εγκατεστημένη, τότε η εικόνα σας είναι πιθανώς παλαιότερη και θα πρέπει να ξεκινήσετε με:
+
+```bash
+sudo apt update
+sudo apt upgrade
+
+
 
