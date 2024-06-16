@@ -6,3 +6,5 @@
 
 ## Λειτουργικό σύστημα
 Μετά από πολλές δυσκολίες και προβλήματα με την εγκατάσταση των απαραίτητων βιβλιοθηκών της Python για την τεχνητή νοημοσύνη, είτε μέσω της εντολής `apt install`, είτε μέσω εικονικού περιβάλλοντος Python (`pip install`) για την βιβλιοθήκη Picamera2, καταλήξαμε στο λειτουργικό **Raspberry Pi 4 Bullseye DNN image**:  _A Raspberry Pi 4 Bullseye 64-OS image with deep learning examples_ από την ομάδα [Q-engineering](https://github.com/Qengineering/RPi-Bullseye-DNN-image).
+Λεπτομέρειες για το λειτουργικό σύστημα και τον εξολπισμό υπάρχουν στο αρχείο [Εξοπλισμός.pdf](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/%CE%95%CE%BE%CE%BF%CF%80%CE%BB%CE%B9%CF%83%CE%BC%CF%8C%CF%82.pdf).
+
