@@ -1,6 +1,6 @@
 # Raspberry-Pi-Based-Rock-Paper-Scissors-Game
 
-#$ Έργο 1: Πέτρα, Ψαλίδι, Χαρτί με χρήση Teachable Machine και Raspberry Pi
+## Έργο 1: Πέτρα, Ψαλίδι, Χαρτί με χρήση Teachable Machine και Raspberry Pi
 
 Αυτό το έργο αποτελείται από δύο μέρη:
 - **Εκπαίδευση μοντέλου ΤΝ με Teachable Machine**: Ένα μοντέλο Τεχνητής Νοημοσύνης (ΤΝ) εκπαιδεύτηκε να αναγνωρίζει τις χειρονομίες "Πέτρα, Ψαλίδι, Χαρτί" μέσω της πλατφόρμας Teachable Machine.
