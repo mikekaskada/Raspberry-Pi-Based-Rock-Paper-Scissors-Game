@@ -8,6 +8,12 @@
 Μετά από πολλές δυσκολίες και προβλήματα με την εγκατάσταση των απαραίτητων βιβλιοθηκών της Python για την τεχνητή νοημοσύνη, είτε μέσω της εντολής `apt install`, είτε μέσω εικονικού περιβάλλοντος Python (`pip install`) για την βιβλιοθήκη Picamera2, καταλήξαμε στο λειτουργικό **Raspberry Pi 4 Bullseye DNN image**:  _A Raspberry Pi 4 Bullseye 64-OS image with deep learning examples_ από την ομάδα [Q-engineering](https://github.com/Qengineering/RPi-Bullseye-DNN-image).
 Λεπτομέρειες για το λειτουργικό σύστημα και τον εξολπισμό υπάρχουν στο αρχείο [Εξοπλισμός.pdf](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/%CE%95%CE%BE%CE%BF%CF%80%CE%BB%CE%B9%CF%83%CE%BC%CF%8C%CF%82.pdf).
 
+## Raspberry Pi Camera Module 3
+Η [Raspberry Pi Camera Module V3](https://datasheets.raspberrypi.com/camera/camera-module-3-product-brief.pdf) είναι μια συμπαγής κάμερα από την Raspberry Pi. Διαθέτει έναν αισθητήρα IMX708  12-megapixel με HDR και υποστηρίζει αυτόματη εστίαση με ανίχνευση φάσης.
+Χρειάστηκε να αντικατασταθεί το καλώδιο (cable ribbon) που έχει με άλλο μακρύτερο μήκους 1 m. Εκτυπώσαμε με 3D εκτύπωση μια θήκη για την κάμερα (Raspberry Pi Camera Stand for PiCam v3).  Η κάμερα τοποθετήθηκε πάνω σε στοίβα βιβλίων και κουτιών περίπου 1 m πάνω από την επιφάνεια ενός τραπεζιού. Στη βάση της στοίβας τοποθετήσαμε ανεστραμμένο ένα πίνακα και πάνω στον πίνακα ένα σουπλά με την λευκή επιφάνεια προς τα πάνω. Με το μονόχρωμο (άσπρο) υπόβαθρο ήταν πιο εύκολη η αναγνώριση και κατηγοριοποίηση της φωτογραφίας αργότερα από το πρόγραμμα.    
+
+
+
 **Picamera2**
 
 Η [Picamera2](https://github.com/raspberrypi/picamera2) είναι η βιβλιοθήκη βασισμένη στη libcamera που αντικαθιστά την Picamera, η οποία ήταν μια διεπαφή Python για την παλαιότερη στοίβα κάμερας του Raspberry Pi και δεν υποστήριζει τη νέα κάμερα [Raspberry Pi Camera Module V3](https://datasheets.raspberrypi.com/camera/camera-module-3-product-brief.pdf), η οποία διαθέτει δυνατότητα autofocus.
