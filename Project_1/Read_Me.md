@@ -10,37 +10,16 @@
 
 ## Raspberry Pi Camera Module 3
 Η [Raspberry Pi Camera Module V3](https://datasheets.raspberrypi.com/camera/camera-module-3-product-brief.pdf) είναι μια συμπαγής κάμερα από την Raspberry Pi. Διαθέτει έναν αισθητήρα IMX708  12-megapixel με HDR και υποστηρίζει αυτόματη εστίαση με ανίχνευση φάσης.
-Χρειάστηκε να αντικατασταθεί το καλώδιο (cable ribbon) που έχει με άλλο μακρύτερο μήκους 1 m. Εκτυπώσαμε με 3D εκτύπωση μια θήκη για την κάμερα (Raspberry Pi Camera Stand for PiCam v3).  Η κάμερα τοποθετήθηκε πάνω σε στοίβα βιβλίων και κουτιών περίπου 1 m πάνω από την επιφάνεια ενός τραπεζιού. Στη βάση της στοίβας τοποθετήσαμε ανεστραμμένο ένα πίνακα και πάνω στον πίνακα ένα σουπλά με την λευκή επιφάνεια προς τα πάνω. Με το μονόχρωμο (άσπρο) υπόβαθρο ήταν πιο εύκολη η αναγνώριση και κατηγοριοποίηση της φωτογραφίας αργότερα από το πρόγραμμα.    
+Χρειάστηκε να αντικατασταθεί το καλώδιο (cable ribbon) που έχει με άλλο μακρύτερο μήκους 1 m. 
 
+Εκτυπώσαμε με 3D εκτύπωση μια θήκη για την κάμερα [Raspberry Pi Camera Stand for PiCam v3](https://www.thingiverse.com/thing:5805000).
 
+![camera case](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/camera%20case.jpg)  
 
-**Picamera2**
+Η κάμερα τοποθετήθηκε πάνω σε στοίβα βιβλίων και κουτιών περίπου 1 m πάνω από την επιφάνεια ενός τραπεζιού. 
+Στη βάση της στοίβας τοποθετήσαμε ανεστραμμένο ένα πίνακα και πάνω στον πίνακα ένα σουπλά με την λευκή επιφάνεια προς τα πάνω.
 
-Η [Picamera2](https://github.com/raspberrypi/picamera2) είναι η βιβλιοθήκη βασισμένη στη libcamera που αντικαθιστά την Picamera, η οποία ήταν μια διεπαφή Python για την παλαιότερη στοίβα κάμερας του Raspberry Pi και δεν υποστήριζει τη νέα κάμερα [Raspberry Pi Camera Module V3](https://datasheets.raspberrypi.com/camera/camera-module-3-product-brief.pdf), η οποία διαθέτει δυνατότητα autofocus.
+![books](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/ce576b718da82a72690bebc52997ac0bb25e20ec/Project_1/Images/camera%20on%20top%20of%20books.jpg) ![base](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/surface%20with%20white%20background.jpg)  
 
-Μπορείτε να βρείτε την τεκμηρίωση [εδώ](https://example.com), η οποία θα σας βοηθήσει να ξεκινήσετε.
-
-**Εγκατάσταση**
-
-Η Picamera2 υποστηρίζεται μόνο στις εικόνες Raspberry Pi OS Bullseye (ή νεότερες), τόσο σε 32 όσο και σε 64-bit. Από τον Σεπτέμβριο του 2022, το Picamera2 είναι προεγκατεστημένο στις εικόνες που κατεβάζονται από το Raspberry Pi. Λειτουργεί σε όλες τις πλακέτες Raspberry Pi, μέχρι και το Pi Zero, αν και η απόδοση σε κάποιους τομείς μπορεί να είναι χειρότερη σε λιγότερο ισχυρές συσκευές.
-
-Η Picamera2 δεν υποστηρίζεται σε:
-
-- Εικόνες βασισμένες σε Buster ή παλαιότερες εκδόσεις.
-- Εικόνες Raspberry Pi OS Legacy.
-- Εικόνες Bullseye (ή νεότερες) όπου η παλαιά στοίβα κάμερας έχει ενεργοποιηθεί ξανά.
-
-**Εγκατάσταση με χρήση του apt**
-
-Το apt είναι ο συνιστώμενος τρόπος εγκατάστασης και ενημέρωσης του Picamera2.
-
-Αν η Picamera2 είναι ήδη εγκατεστημένη, μπορείτε να την ενημερώσετε με την εντολή `sudo apt install -y python3-picamera2`, ή ως μέρος μιας πλήρους ενημέρωσης του συστήματος (για παράδειγμα, `sudo apt upgrade`).
-
-Αν η Picamera2 δεν είναι ήδη εγκατεστημένη, τότε η εικόνα σας είναι πιθανώς παλαιότερη και θα πρέπει να ξεκινήσετε με:
-
-```bash
-sudo apt update
-sudo apt upgrade
-
-
+Με το μονόχρωμο (άσπρο) υπόβαθρο ήταν πιο εύκολη η αναγνώριση και κατηγοριοποίηση της φωτογραφίας αργότερα από το πρόγραμμα.
 
