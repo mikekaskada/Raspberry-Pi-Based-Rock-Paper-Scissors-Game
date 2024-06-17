@@ -1,4 +1,5 @@
 # Raspberry-Pi-Based-Rock-Paper-Scissors-Game
+[Δείτε το video](https://www.youtube.com/watch?v=iwkqqVQcEus)
 
 ## Έργο 1: Πέτρα, Ψαλίδι, Χαρτί με χρήση Teachable Machine και Raspberry Pi
 
