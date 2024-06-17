@@ -13,6 +13,8 @@
 Η [Raspberry Pi Camera Module V3](https://datasheets.raspberrypi.com/camera/camera-module-3-product-brief.pdf) είναι μια συμπαγής κάμερα από την Raspberry Pi. Διαθέτει έναν αισθητήρα IMX708  12-megapixel με HDR και υποστηρίζει αυτόματη εστίαση με ανίχνευση φάσης.
 Χρειάστηκε να αντικατασταθεί το καλώδιο (cable ribbon) που έχει με άλλο μακρύτερο μήκους 1 m. 
 
+![camera back](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/back%20of%20camera.jpg)
+
 Εκτυπώσαμε με 3D εκτύπωση μια θήκη για την κάμερα [Raspberry Pi Camera Stand for PiCam v3](https://www.thingiverse.com/thing:5805000).
 
 ![camera case](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/camera%20case.jpg)  
@@ -23,12 +25,13 @@
 ![books](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/ce576b718da82a72690bebc52997ac0bb25e20ec/Project_1/Images/camera%20on%20top%20of%20books.jpg) ![base](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/surface%20with%20white%20background.jpg)  
 
 Με το μονόχρωμο (άσπρο) υπόβαθρο ήταν πιο εύκολη η αναγνώριση και κατηγοριοποίηση της φωτογραφίας αργότερα από το πρόγραμμα.
-## Δημιουργία και επεξεργασία Δεδομένων, δηλ. εικόνων, για το Teachable Machine
+# Δημιουργία και επεξεργασία Δεδομένων, δηλ. εικόνων, για το Teachable Machine
 
-## Capture images.py
+## Δημιουργία Δεδομένων: Capture images.py
 Αφού τοποθετήσουμε την camera όπως περιγράψαμε πριν, κάνουμε τις κατάλληλες χειρονομίες και πατάμε τα πλήκτρα "p" (paper=χαρτί), "r" (rock=πέτρα) ή "s" (scissors=ψαλίδι) και το Raspberry Pi καταγράφει την εικόνα και την τοποθετεί στον αντίστοιχο φάκελο. Φροντίζουμε να πάρουμε εικόνες με διαφορετικές συθήκες φωτεινότητας, προσανατολισμού, απόστασης από την κάμερα. Ένα πράσινο τετράγωνο μας δείχνει την περιοχή στην οποία πρέπει να βρίσκεται το χέρι μας. 
 
-![base](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/surface%20with%20white%20background.jpg) 
+![Capture image](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Capture%20image.jpg)
+![base](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Capture%20image%202.jpg)
 
 ### Ανάλυση του Κώδικα "Capture images.py"
 
