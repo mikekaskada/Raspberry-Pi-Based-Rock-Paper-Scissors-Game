@@ -277,4 +277,11 @@ subdirs = ["paper", "scissors", "rock"]
 ![10](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot_21.jpg)
 ![11](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot_22.jpg)
 
+Κατέβηκε ένα αρχείο αρχείο `converted_keras.zip` στις λήψεις και το αντιγράψαμε και το αποσιμπιέσαε στον φάκλεο `Project`.
+
+Περιέχει 2 αρχεία:
+- Το `keras_model.h5` το οποίο είναι το μοντέλο
+- Το `labels.txt` το οποίο έχει τις ετικέτες για τις κατηγορίες **paper**, **scissors**, **rock**.
+
 ## Έλεγχος εγκυρότητας (validation) του μοντέλου.
+
