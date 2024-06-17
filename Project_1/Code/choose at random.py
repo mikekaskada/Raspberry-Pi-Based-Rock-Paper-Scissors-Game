@@ -4,7 +4,7 @@ import shutil
 
 # Define the directories
 source_dir = "final_images"
-target_dir = "chosen"
+target_dir = "Training_Data"
 subdirs = ["paper", "scissors", "rock"]
 
 # Ensure the target directories exist
