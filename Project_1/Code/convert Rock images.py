@@ -11,7 +11,7 @@ if not os.path.exists(output_dir):
 
 # Desired size after cropping
 desired_width = 224
-desired_height = 224
+desired_height = 200
 
 # Amount to crop from left and right
 left_crop = 64
