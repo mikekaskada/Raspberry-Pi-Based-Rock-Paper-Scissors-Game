@@ -1,9 +1,9 @@
 ## Έργο 1: Πέτρα, Ψαλίδι, Χαρτί με χρήση Teachable Machine και Raspberry Pi
 
 Αυτό το έργο αποτελείται από τρία μέρη:
-- **Δημιουργία και επεξεργασία Δεδομένων**, δηλ εικόνων, για το Teachable Machine
-- **Εκπαίδευση μοντέλου ΤΝ με Teachable Machine**: Ένα μοντέλο Τεχνητής Νοημοσύνης (ΤΝ) εκπαιδεύτηκε να αναγνωρίζει τις χειρονομίες "Πέτρα, Ψαλίδι, Χαρτί" μέσω της πλατφόρμας Teachable Machine.
-- **Παιχνίδι με το Raspberry Pi**: Το Raspberry Pi χρησιμοποιήθηκε για να αναγνωρίζει τις χειρονομίες του παίκτη μέσω της κάμεράς του και να παίζει το παιχνίδι με τυχαίο τρόπο.
+- **A. Δημιουργία και επεξεργασία Δεδομένων**, δηλ εικόνων, για το Teachable Machine
+- **B. Εκπαίδευση μοντέλου ΤΝ με Teachable Machine**: Ένα μοντέλο Τεχνητής Νοημοσύνης (ΤΝ) εκπαιδεύτηκε να αναγνωρίζει τις χειρονομίες "Πέτρα, Ψαλίδι, Χαρτί" μέσω της πλατφόρμας Teachable Machine.
+- **Γ. Παιχνίδι με το Raspberry Pi**: Το Raspberry Pi χρησιμοποιήθηκε για να αναγνωρίζει τις χειρονομίες του παίκτη μέσω της κάμεράς του και να παίζει το παιχνίδι με τυχαίο τρόπο.
 
 ## Λειτουργικό σύστημα
 Μετά από πολλές δυσκολίες και προβλήματα με την εγκατάσταση των απαραίτητων βιβλιοθηκών της Python για την τεχνητή νοημοσύνη, είτε μέσω της εντολής `apt install`, είτε μέσω εικονικού περιβάλλοντος Python (`pip install`) για την βιβλιοθήκη Picamera2, καταλήξαμε στο λειτουργικό **Raspberry Pi 4 Bullseye DNN image**:  _A Raspberry Pi 4 Bullseye 64-OS image with deep learning examples_ από την ομάδα [Q-engineering](https://github.com/Qengineering/RPi-Bullseye-DNN-image).
@@ -25,7 +25,7 @@
 ![books](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/ce576b718da82a72690bebc52997ac0bb25e20ec/Project_1/Images/camera%20on%20top%20of%20books.jpg) ![base](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/surface%20with%20white%20background.jpg)  
 
 Με το μονόχρωμο (άσπρο) υπόβαθρο ήταν πιο εύκολη η αναγνώριση και κατηγοριοποίηση της φωτογραφίας αργότερα από το πρόγραμμα.
-# Δημιουργία και επεξεργασία Δεδομένων, δηλ. εικόνων, για το Teachable Machine
+# Α. Δημιουργία και επεξεργασία Δεδομένων, δηλ. εικόνων, για το Teachable Machine
 
 ## 1. Δημιουργία Δεδομένων: Capture images.py
 Αφού τοποθετήσουμε την camera όπως περιγράψαμε πριν, κάνουμε τις κατάλληλες χειρονομίες και πατάμε τα πλήκτρα "p" (paper=χαρτί), "r" (rock=πέτρα) ή "s" (scissors=ψαλίδι) και το Raspberry Pi καταγράφει την εικόνα και την τοποθετεί στον αντίστοιχο φάκελο. Φροντίζουμε να πάρουμε εικόνες με διαφορετικές συθήκες φωτεινότητας, προσανατολισμού, απόστασης από την κάμερα. Ένα πράσινο τετράγωνο μας δείχνει την περιοχή στην οποία πρέπει να βρίσκεται το χέρι μας. 
@@ -147,11 +147,11 @@ sudo apt install python3-picamera2
 Μετά την εγκατάσταση, μπορείτε να τρέξετε τον κώδικα χωρίς προβλήματα.
 
 ## 3. Δημιουργία περισσότερων δεδομένων
-Είναι γνωστό ότι για να είναι αξιόπιστο ένα μοντέλο ΤΝ πρέπει να έχει εκπαιδευτεί με σωστά και κατάλληλα δεδομένα. 
+Είναι γνωστό ότι για να είναι αξιόπιστο ένα μοντέλο ΤΝ πρέπει να έχει εκπαιδευτεί με σωστά και κατάλληλα δεδομένα.
 
-**Συγκεντρώσαμε σε ένα PC όλες τις εικόνες που είχαμε από το Raspbbery Pi και από το προηγούμενο βήμα όσες ήταν στους φακέλους** `Paper_New`, `Rock_New`, `Scissors_New` **και τις βάλαμε σε φακέλους** `paper`, `rock`, `scissors`.
+**Συγκεντρώσαμε σε ένα PC όλες τις εικόνες που είχαμε από το Raspbbery Pi και όσες είχαμε από το προηγούμενο βήμα και ήταν στους φακέλους** `Paper_New`, `Rock_New`, `Scissors_New` **και τις βάλαμε σε φακέλους στο PC** `paper`, `rock`, `scissors`.
 
-**Αυτό έγινε γιατί η διαδικασίες που θα ακολουθήσουν γίνονταν πολύ αργά στο Raspberry Pi, ενώ το PC είχε δίσκο SSD με μεγάλη χωρητικότητα και πολύ περισσότερη μνήμη (8 GB).**
+**Αυτό έγινε γιατί οι διαδικασίες που θα ακολουθούσαν γινόταν πολύ αργά στο Raspberry Pi, ενώ το PC διέθετε δίσκο SSD με μεγάλη χωρητικότητα και πολύ περισσότερη μνήμη (8 GB).**
 
 Εκτελέσαμε τον κώδικα **rotate and flip images.py** στο PC.
 
@@ -205,8 +205,50 @@ pip install Pillow
 
 ![images](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot_14.jpg)
 
+# B. Εκπαίδευση μοντέλου ΤΝ με Teachable Machine
+Το [Teachable Machine](https://teachablemachine.withgoogle.com/) είναι ένα εργαλείο που χρησιμοποιείται για τη δημιουργία απλών μοντέλων Μηχανικής Μάθησης χωρίς την ανάγκη προγραμματιστικών δεξιοτήτων. Μπορεί να χρησιμοποιηθεί από μαθητές, εκπαιδευτικούς και ερευνητές για να δημιουργήσουν μοντέλα Τεχνητής Νοημοσύνης που αναγνωρίζουν πρότυπα σε εικόνες, ήχους ή κίνηση. Το Teachable Machine ανήκει στην κατηγορία της **επιβλεπόμενης μάθησης (supervised learning)** στον τομέα της **Μηχανικής Μάθησης (Machine Learning)**. Η επιβλεπόμενη μάθηση περιλαμβάνει την εκπαίδευση ενός μοντέλου χρησιμοποιώντας δεδομένα με ετικέτες για να αναγνωρίζει μοτίβα και να προβλέπει κατηγορίες.
 
+## 1. Επιλογή δεδομένων για την εκπαίδευση του Teachable Machine: `choose at random.py`
+Στο PC εκτελούμε τον κώδικα `choose at random.py`
 
+Ο κώδικας εκτελεί τις εξής λειτουργίες:
 
+1. Ορίζει τους καταλόγους προέλευσης (`source_dir`) και προορισμού (`target_dir`), καθώς και τους υποκαταλόγους (`subdirs`).
 
+```python
+# Define the directories
+source_dir = "final_images"
+target_dir = "Training_Data"
+subdirs = ["paper", "scissors", "rock"]
+```
+2. Εξασφαλίζει ότι οι υποκατάλογοι προορισμού υπάρχουν, δημιουργώντας τους εάν δεν υπάρχουν.
+3. Περιέχει μία συνάρτηση `move_and_rename_random_files` που:
+   - Ελέγχει αν ο κατάλογος προέλευσης υπάρχει.
+   - Λαμβάνει τη λίστα όλων των αρχείων PNG στον κατάλογο προέλευσης.
+   - Ελέγχει αν υπάρχουν αρκετά αρχεία για να μετακινηθούν.
+   - Επιλέγει τυχαία αρχεία από τη λίστα.
+   - Μετακινεί και μετονομάζει τα επιλεγμένα αρχεία στον κατάλογο προορισμού.
+4. Εκτελεί τη συνάρτηση για κάθε υποκατάλογο, μετακινώντας και μετονομάζοντας 8000 τυχαία αρχεία από κάθε υποκατάλογο.
+5. Εκτυπώνει ένα μήνυμα ολοκλήρωσης.
 
+Στο τέλος έχουμε έναν κατάλογο `Training_Data` και σε αυτόν 3 υποκαταλόγους `paper` , `scissors` , `rock` με 8000 τυχαία επιλεγμένες και ανακατεμένες εικόνες να είναι στον κάθε υποκατάλογο.
+
+![random](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/random.png)
+
+Με αυτές τις εικόνες της κάθε κατηγορίας θα εκπαιδεύσουμε το Teachable Machine
+
+## 2. Εκπαίδευση του Teachable Machine
+Από τον ιστότοπο του [Teachable Machine](https://teachablemachine.withgoogle.com/train) επιλέγουμε:
+
+![1](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot_15.jpg)
+
+![2](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot_16.jpg)
+
+και φτιάχνουμε τις 3 κατηγορίες (classes) **paper**`, **scissors** , **rock**
+
+![3](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot_17.jpg)
+
+Σε κάθε κατηγορία **paper**, **scissors**, **rock**, ανεβάζουμε τα αντίστοιχα 8000 αρχεία από τους υποκαταλόγους `paper`, `scissors`, `rock` οι οποίοι είναι μέσα στον κατάλογο `Training_Data`.
+
+![4](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot_18.jpg)
+![5](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot_7.jpg)
