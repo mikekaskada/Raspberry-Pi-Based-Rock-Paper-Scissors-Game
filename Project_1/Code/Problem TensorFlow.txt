@@ -1,0 +1,1 @@
+ The problem is the code that teachable machine gives (for .h5) is for older version of tensorflow. As Ajonn mentioned, downgrading it to an older version (2.12 for example) solves the issue. Also make sure that you are working with ( Python 3.8–3.11). It’s not supported for older or newer versions.
