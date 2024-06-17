@@ -295,6 +295,14 @@ subdirs = ["paper", "scissors", "rock"]
 
 **Η επίδοση του μοντέλου ήταν σε γενικές γραμμές πολύ καλή.**
 ## Επανεκπαίδευση
-Τις εικόνες που δεν αναγνωρίστικαν **και μόνον αυτές**, μπορούμε να τις μετακινήσουμε στον σωστό υποφάκελο του φακέλου `Training_Data` και να εκπαιδεύσουμε ξανά το μοντέλο μας στο Teachable MAchine.
+Τις εικόνες που δεν αναγνωρίστικαν **και μόνον αυτές**, μπορούμε να τις μετακινήσουμε στον σωστό υποφάκελο του φακέλου `Training_Data` και να εκπαιδεύσουμε ξανά το μοντέλο μας στο Teachable Machine.
 
+# Γ. Παιχνίδι στο Raspberry Pi με αναγνώριση χειρονομιών 
+Στο Raspberry Pi τρέχουμε τον κώδικα `rsp game with image recogntion and sounds.py`. Φροντίζουμε να έχουμε στον ίδιο φάκελο το προηγούμενο αρχείο, όλα τα αρχεία ήχου (.wav) που είναι στον φάκελο [`Code`](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/tree/main/Project_1/Code) καθώς και τα αρχεία `keras_model.h5` και `labels.txt`.
 
+- Ακούγεται ένασ ήχος με 3 ειδοποιήσεις και στο τέλος αυτών ο παίκτης πρέπει να κάνει μια χειρονομία.
+![12](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/surface%20with%20white%20background.jpg)
+- Το Raspberry Pi χρησιμοποιεί το μοντέλο ΤΝ και την αναγνωρίζει.
+![13](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/blob/main/Project_1/Images/Screenshot%20from%202024-06-16%2013-44-18.jpg)
+- Ο παίκτης επιβεβαιώνει με το πλήκτρο `space` αν είναι σωστή , αλλλοιώς διορθώνει με τα πλήκτρα "p", "s", "r" και η λάθος αναγνωρισμένη φωτογραφία αποθηκευται σε κατάλληλο φάκλεο.
+- Το Raspberry Pi επιλέγει τυχαία, ανακοινώνεται το αποτέλεσμα του γύρου και υπολογίζεται το νέο σκορ. 
