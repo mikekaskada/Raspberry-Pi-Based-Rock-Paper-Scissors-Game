@@ -1,5 +1,8 @@
 # Raspberry-Pi-Based-Rock-Paper-Scissors-Game
-[Δείτε το video](https://www.youtube.com/watch?v=iwkqqVQcEus)
+Το συνολικό έργο είναι από την συμμετοχή του Ζάννειου Πρότυπου Γυμνασίου στον [6ο Πανελλήνιο Διαγωνισμό Ανοικτών Τεχνολογιών στην Εκπαίδευση](https://openedtech.ellak.gr/) και που είχε ωε θέμα την χρήση της Τεχνητής Νοημοσύνης.  
+
+**Το συγκεκριμένο έργο αξιολογήθηκε θετικά και διακρίθηκε**
+
 
 ## [Έργο 1: Πέτρα, Ψαλίδι, Χαρτί με χρήση Teachable Machine και Raspberry Pi](https://github.com/mikekaskada/Raspberry-Pi-Based-Rock-Paper-Scissors-Game/tree/main/Project_1)
 
