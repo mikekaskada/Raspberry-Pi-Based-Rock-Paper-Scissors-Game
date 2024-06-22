@@ -161,7 +161,7 @@ class AdvancedDQNAgent:
         self.transition_counts = defaultdict(lambda: defaultdict(int))
         self.last_move = None
         self.game_history = []
-        self.strategy_switch_threshold = 0.35  # Threshold for switching strategy
+        self.strategy_switch_threshold = 0.25  # Threshold for switching strategy
 
         # Load pre-trained model if path is provided
         if pre_trained_path and os.path.exists(pre_trained_path):
@@ -281,7 +281,7 @@ class AdvancedDQNAgent:
         state.extend(opp_freq_normalized)
         
         # Add move frequencies in recent rounds (e.g., last 10 moves)
-        recent_length = 30
+        recent_length = 20
         recent_player_moves = [player_moves[-i] for i in range(1, min(len(player_moves), recent_length) + 1)]
         recent_computer_moves = [computer_moves[-i] for i in range(1, min(len(computer_moves), recent_length) + 1)]
         move_counts = [recent_player_moves.count('rock'), recent_player_moves.count('paper'), recent_player_moves.count('scissors'),
@@ -427,9 +427,9 @@ class AdvancedDQNAgent:
 
         # Example thresholds for changing strategy
         if self.win_streak >= 3:
-            self.epsilon = max(self.epsilon_min, self.epsilon * 0.85)  # Become more exploitative
+            self.epsilon = max(self.epsilon_min, self.epsilon * 0.8)  # Become more exploitative
         elif self.lose_streak >= 2:
-            self.epsilon = min(1.0, self.epsilon * 1.2)  # Become more explorative
+            self.epsilon = min(1.0, self.epsilon * 1.25)  # Become more explorative
 
 # Function to load all game history files
 def load_game_history():
@@ -448,7 +448,7 @@ def load_game_history():
     return game_data
 
 class RockPaperScissorsGame:
-    def __init__(self, goal_score=25):
+    def __init__(self, goal_score=30):
         self.goal_score = goal_score
         self.pre_trained_path = "Games/dqn_model.pth"
         self.reset_game()
@@ -506,6 +506,14 @@ class RockPaperScissorsGame:
 
         # Update streaks
         self.agent.update_streaks(result)
+
+        # Change strategy if player's score - computer's score >= 2
+        if self.player_score - self.computer_score >= 2:
+            self.agent.epsilon = max(self.agent.epsilon_min, self.agent.epsilon * 0.65)  # Become more exploitative
+
+        # Change strategy if computer's score - player's score > 2
+        if self.computer_score - self.player_score > 2:
+            self.agent.epsilon = min(1.0, self.agent.epsilon * 1.1)  # Become more explorative
 
         return computer_name, result
 
@@ -599,7 +607,7 @@ def determine_reward(player_move, computer_move):
 
 def weighted_first_move():
     moves = ['rock', 'paper', 'scissors']
-    probabilities = [0.26, 0.4, 0.34]
+    probabilities = [0.24, 0.42, 0.34]
     return random.choices(moves, probabilities)[0]
 
 def detect_pattern(player_moves, length=70):
@@ -687,4 +695,3 @@ result_label = tk.Label(root, text="", font=font_medium)
 result_label.pack(side="bottom", pady=20)
 
 root.mainloop()
-
