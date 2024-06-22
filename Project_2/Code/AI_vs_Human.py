@@ -53,7 +53,7 @@ def load_and_preprocess_history(directory="Games"):
     print("Historical game data successfully loaded and processed.")
     return move_frequencies, transition_counts
 
-def cluster_opponent_strategies(historical_data, n_clusters=5):
+def cluster_opponent_strategies(historical_data, n_clusters=7):
     # Extract move patterns and streaks from historical data
     move_patterns = []
     for game in historical_data:
@@ -94,7 +94,7 @@ class DQNetwork(nn.Module):
         self.advantage_fc = nn.Linear(128, output_dim)
         
         # Adjusted dropout rate to prevent overfitting
-        self.dropout = nn.Dropout(0.3)
+        self.dropout = nn.Dropout(0.6)
     
     def forward(self, x):
         x = torch.relu(self.fc1(x))
@@ -147,12 +147,12 @@ class AdvancedDQNAgent:
         self.state_size = state_size + 1 + 3  # Update to include the opponent cluster information and streaks
         self.action_size = action_size
         self.actions = ['R', 'P', 'S']
-        self.gamma = 0.95  # Discount factor for future rewards
-        self.epsilon = 0.5  # Initial exploration rate
+        self.gamma = 0.98  # Discount factor for future rewards
+        self.epsilon = 0.90  # Initial exploration rate
         self.epsilon_min = 0.05  # Minimum exploration rate
         self.epsilon_decay = 0.995  # Decay rate for epsilon
-        self.learning_rate = 0.001  # Learning rate for the optimizer
-        self.memory = deque(maxlen=10000)  # Increased memory size for experience replay
+        self.learning_rate = 0.0005  # Learning rate for the optimizer
+        self.memory = deque(maxlen=20000)  # Increased memory size for experience replay
         self.model = DQNetwork(self.state_size, self.action_size)
         self.target_model = DQNetwork(self.state_size, self.action_size)
         self.update_target_model()
@@ -161,7 +161,7 @@ class AdvancedDQNAgent:
         self.transition_counts = defaultdict(lambda: defaultdict(int))
         self.last_move = None
         self.game_history = []
-        self.strategy_switch_threshold = 0.15  # Threshold for switching strategy
+        self.strategy_switch_threshold = 0.35  # Threshold for switching strategy
 
         # Load pre-trained model if path is provided
         if pre_trained_path and os.path.exists(pre_trained_path):
@@ -426,10 +426,10 @@ class AdvancedDQNAgent:
             self.tie_streak = 0
 
         # Example thresholds for changing strategy
-        if self.win_streak >= 2:
-            self.epsilon = max(self.epsilon_min, self.epsilon * 0.9)  # Become more exploitative
-        elif self.lose_streak >= 3:
-            self.epsilon = min(1.0, self.epsilon * 1.1)  # Become more explorative
+        if self.win_streak >= 3:
+            self.epsilon = max(self.epsilon_min, self.epsilon * 0.85)  # Become more exploitative
+        elif self.lose_streak >= 2:
+            self.epsilon = min(1.0, self.epsilon * 1.2)  # Become more explorative
 
 # Function to load all game history files
 def load_game_history():
@@ -687,3 +687,4 @@ result_label = tk.Label(root, text="", font=font_medium)
 result_label.pack(side="bottom", pady=20)
 
 root.mainloop()
+
